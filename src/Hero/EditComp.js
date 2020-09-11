@@ -1,6 +1,8 @@
 import React from 'react';
+import { mapStateToProps, mapDispatchToProps } from '../redux/redux';
+import { connect } from 'react-redux';
 
-function EditComp() {
+function EditComp(props) {
     return (
         <div>
             <h1>EditComp</h1>
@@ -8,4 +10,6 @@ function EditComp() {
     )
 }
 
-export default EditComp;
+let Edit = connect(mapStateToProps, mapDispatchToProps)(EditComp);
+
+export default Edit;
