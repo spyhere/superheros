@@ -56,6 +56,12 @@ code {
   transform: translate(-50%, -50%);
   bottom: 1.5em;
 }
+.hero_page__buttons {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
 .superhero__images {
   display: flex;
   flex-wrap: wrap;

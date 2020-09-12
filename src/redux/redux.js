@@ -26,6 +26,8 @@ export const stateReducer = (state = stateInit, action) => {
         case EDIT:
             return prevState;
         case DELETE:
+            console.log(action.marker)
+            prevState.superheros.splice(action.marker, 1)
             return prevState;
         default: 
             return state; 
