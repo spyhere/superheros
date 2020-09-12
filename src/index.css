@@ -11,11 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-img {
-  max-height: 80vh;
-}
-img:hover {
-  transform: scale(1.05, 1.05);
+
+.hero_page__avatar:hover {
+  transform: scale(1.05, 1.05) translate(-50%, 0%);
   transition-duration: .1s;
 }
 .main_pagination {
@@ -27,19 +25,27 @@ img:hover {
 .hero_page {
   background-color: #888888;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+}
+.hero_page__avatar {
+  max-height: 80vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 0;
 }
 .hero_page__description {
-  opacity: 0%;
-  position: absolute;
+  opacity: 0;
+  /* position: absolute; */
   text-align: left;
   width: 40vw;
-  top: 1em;
-  left: 1em;
+  padding: 1em;
+  /* top: 1em; */
+  /* left: 1em; */
   animation: description .1s ease-in normal forwards;
 }
 @keyframes description {
-  100% {opacity: 100%}
+  100% {opacity: 1}
 }
 .hero_page h1 {
   user-select: none;
@@ -49,4 +55,17 @@ img:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   bottom: 1.5em;
+}
+.superhero__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.superhero__images img {
+  margin: 1em;
+  width: 10vw;
+  object-fit: cover;
+  box-shadow: 2px 2px 2px;
 }

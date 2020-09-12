@@ -17,4 +17,10 @@ export let ironMan = {
     origin_description: "Tony Stark is charismatic and eccentric, he is also very proud, but also very altruist and heroic. He did not have a good childhood, and this affects how he acts. Stark is very smart, and a very talented inventor. His technology is always very advanced, and Iron Man is his greatest piece of work.",
     superpowers: "Genius level intellect, superhuman strength, durability, supersonic flight",
     catch_phrase: "I am iron man",
+    images: ["https://blog.ru.playstation.com/tachyon/sites/11/2020/05/unnamed-file-2.jpg?resize=1088,500&crop_strategy=smart",
+"https://i.pinimg.com/originals/78/ac/aa/78acaad3c2890c0d47f94ec7b3cce9fb.jpg",
+"https://i.insider.com/5b52400e51dfbe20008b45f9?width=750&format=jpeg&auto=webp",
+"https://cdn.shopify.com/s/files/1/0169/6995/7440/products/E91825L00_5010993702787_main_20_Online_300DPI_2000x.jpg?v=1582408951",
+"https://images.ua.prom.st/1780682743_marvel-mstiteli-zheleznyj.jpg",
+"https://i2.rozetka.ua/goods/14771663/137844325_images_14771663594.jpg"]
 }

@@ -7,25 +7,34 @@ function SuperHeroComp(props) {
 
     const [descr, setDescr] = useState(false)
 
+    
+
+    useEffect(() => {
+        setDescr(false)
+    }, [props.match.params.id])
+
     useEffect(() => {
         
     }, [descr])
 
-    useEffect(() => {
-        return () => {setDescr(false)}
-    }, [props.match.params.id])
-
+    const route = props.state.superheros[props.match.params.id];
     return (
         <div className="hero_page">
             <Link to={`/edit/${props.match.params.id}`}></Link>
                 {descr ? <div className="hero_page__description">
-                        <p><strong>Real name:</strong> {props.state.superheros[props.match.params.id].nickname}</p>
-                        <p><strong>Description:</strong> {props.state.superheros[props.match.params.id].origin_description}</p>
-                        <p><strong>Super powers:</strong> {props.state.superheros[props.match.params.id].superpowers}</p>
-                        <p><strong>Catch phrase:</strong> <i>&quot;{props.state.superheros[props.match.params.id].catch_phrase}&quot;</i></p>
-                        <p><strong>Images: </strong></p>
+                        <p><strong>Real name:</strong> {route.nickname}</p>
+                        <p><strong>Description:</strong> {route.origin_description}</p>
+                        <p><strong>Super powers:</strong> {route.superpowers}</p>
+                        <p><strong>Catch phrase:</strong> <i>&quot;{route.catch_phrase}&quot;</i></p>
+                        <p><strong>Images: </strong>
+                        <div className="superhero__images">
+                           {route.images.map((x, ind) => {
+                            return <img src={x} alt="superhero img"/>
+                            })} 
+                        </div>
+                        </p>
                     </div> : null}
-                <img src={props.state.superheros[props.match.params.id].frontImg} alt="superhero_img" onMouseEnter={() => setDescr(!descr)} />
+                <img className="hero_page__avatar" src={props.state.superheros[props.match.params.id].frontImg} alt="superhero_img" onMouseEnter={() => setDescr(!descr)} />
 
             <h1>{props.state.superheros[props.match.params.id].nickname}</h1>
         </div>
