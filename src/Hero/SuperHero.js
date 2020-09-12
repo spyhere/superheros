@@ -48,6 +48,7 @@ function SuperHeroComp(props) {
                 <Link to={`/hero/${props.match.params.id > 0 ? props.match.params.id-1 : 0}`}><Button disabled={!props.state.superheros.length} onClick={() => deleteFunc()}>Delete</Button></Link>
                 
                 <Button disabled={!props.state.superheros.length}>Edit</Button>
+                <Link to={"/create"}><Button>Create</Button></Link>
             </div>
             
         </div>

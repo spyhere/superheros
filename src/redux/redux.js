@@ -23,10 +23,12 @@ let stateInit = {superheros: [superman, ironMan]};
 export const stateReducer = (state = stateInit, action) => {
     let prevState = {...state};
     switch (action.type) {
+        case CREATE:
+            prevState.superheros.push(action.newState);
+            return prevState;
         case EDIT:
             return prevState;
         case DELETE:
-            console.log(action.marker)
             prevState.superheros.splice(action.marker, 1)
             return prevState;
         default: 

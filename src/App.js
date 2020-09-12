@@ -5,7 +5,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { mapStateToProps, mapDispatchToProps } from './redux/redux';
 import SuperHero from './Hero/SuperHero';
 import Edit from './Hero/EditComp';
-import CreateComp from './Hero/CreateComp';
+import Create from './Hero/CreateComp';
 
 function Presentational() {
   return (
@@ -14,7 +14,7 @@ function Presentational() {
         <Switch>
           <Route path="/hero/:id" exact component={SuperHero} />
           <Route path="/edit/:id" exact component={Edit} />
-          <Route path="/create/:hero" exact component={CreateComp} />
+          <Route path="/create/" exact component={Create} />
         </Switch>
     </div>
     <Home />
