@@ -29,6 +29,7 @@ code {
 }
 .hero_page__avatar {
   max-height: 80vh;
+  max-width: 22vw;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -81,9 +82,8 @@ code {
   min-height: 100vh;
 }
 .create_page__input {
-  width: 50vw;
-  text-align: end;
-  transform: translate(15%, 0);
+  text-align: start;
+  padding: 3em;
 }
 .create_page__input label {
   text-align: left;
@@ -91,4 +91,7 @@ code {
 .create_page__input__large {
   width: 100%;
   height: 5em;
+}
+.create_page__input__buttons {
+  text-align: center;
 }

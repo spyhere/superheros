@@ -13,7 +13,7 @@ function Presentational() {
     <div>
         <Switch>
           <Route path="/hero/:id" exact component={SuperHero} />
-          <Route path="/edit/:id" exact component={Edit} />
+          <Route path="/edit/:id" exact component={Create} />
           <Route path="/create/" exact component={Create} />
         </Switch>
     </div>

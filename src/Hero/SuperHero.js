@@ -29,7 +29,7 @@ function SuperHeroComp(props) {
             <Link to={`/edit/${props.match.params.id}`}></Link>
 
                 {descr && props.state.superheros.length ? <div className="hero_page__description">
-                        <p><strong>Real name:</strong> {route.nickname}</p>
+                        <p><strong>Real name:</strong> {route.real_name}</p>
                         <p><strong>Description:</strong> {route.origin_description}</p>
                         <p><strong>Super powers:</strong> {route.superpowers}</p>
                         <p><strong>Catch phrase:</strong> <i>&quot;{route.catch_phrase}&quot;</i></p>
@@ -47,7 +47,7 @@ function SuperHeroComp(props) {
             <div className="hero_page__buttons">
                 <Link to={`/hero/${props.match.params.id > 0 ? props.match.params.id-1 : 0}`}><Button disabled={!props.state.superheros.length} onClick={() => deleteFunc()}>Delete</Button></Link>
                 
-                <Button disabled={!props.state.superheros.length}>Edit</Button>
+                <Link to={`/edit/${props.match.params.id}`}><Button disabled={!props.state.superheros.length} onClick={() => props.add({id: props.match.params.id, edit: true})}>Edit</Button></Link>
                 <Link to={"/create"}><Button>Create</Button></Link>
             </div>
             
