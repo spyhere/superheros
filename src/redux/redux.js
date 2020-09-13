@@ -22,7 +22,7 @@ const addState = (newState) => {
 }
 
 
-let stateInit = {superheros: [superman, ironMan], edit: false, id: null};
+let stateInit = {superheros: [superman, ironMan], edit: false, id: 0};
 
 export const stateReducer = (state = stateInit, action) => {
     let prevState = {...state};

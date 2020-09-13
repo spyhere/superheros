@@ -16,6 +16,11 @@ function CreateComp(props) {
         setState(stateTemp);
     }
 
+    function submitEdit() {
+        if (props.state.edit) props.add({edit: false});
+        props.state.edit ? props.edit(state) : props.create(state)
+    }
+
     useEffect(() => {
 
         if (props.state.edit) setState(props.state.superheros[props.state.id])
@@ -35,10 +40,10 @@ function CreateComp(props) {
                 <label>Description:<textarea name="origin_description"  onChange={event => changeFunc(event)} className="create_page__input__large" type="text" defaultValue={props.state.edit ? props.state.superheros[props.state.id].origin_description : null}></textarea></label><br/>
                 <label>Superpowers:<textarea name="superpowers"  onChange={event => changeFunc(event)} className="create_page__input__large" type="text" defaultValue={props.state.edit ? props.state.superheros[props.state.id].superpowers : null}></textarea></label><br/>
                 <label>Catch phrase:<input name="catch_phrase"  onChange={event => changeFunc(event)} className="create_page__input__large" type="text" defaultValue={props.state.edit ? props.state.superheros[props.state.id].catch_phrase : null}></input></label><br/>
-                <label>Images:<textarea name="images" style={{width: "200%"}}  onChange={event => changeFunc(event)} className="create_page__input__large" type="text" defaultValue={props.state.edit ? props.state.superheros[props.state.id].images : null}></textarea></label><br/>
+                <label>Images:<textarea name="images" style={{width: "200%"}}  onChange={event => changeFunc(event)} className="create_page__input__large" type="text" defaultValue={props.state.edit ? props.state.superheros[props.state.id].images.join(" ") + " " : null}></textarea></label><br/>
                 <div className="create_page__input__buttons">
-                <Link to={`/hero/0`}><Button onClick={() => props.state.edit ? props.edit(state) : props.create(state)} type="submit" disabled={!state.nickname.length}>{props.state.edit ? "Edit" : "Create"}</Button></Link>
-                    <Link to={`/hero/0`}><Button type="submit">Cancel</Button></Link>
+                <Link to={`/hero/0`}><Button onClick onClick={() => submitEdit()} type="submit" disabled={!state.nickname.length}>{props.state.edit ? "Edit" : "Create"}</Button></Link>
+                    <Link to={`/hero/0`}><Button type="submit" onClick={() => props.add({edit: false})}>Cancel</Button></Link>
                 </div>
                 
             </div>

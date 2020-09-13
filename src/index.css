@@ -23,7 +23,7 @@ code {
   transform: translate(-50%, -50%);
 }
 .hero_page {
-  background-color: #888888;
+  background-color: #cccccc;
   text-align: center;
   min-height: 100vh;
 }
@@ -37,12 +37,9 @@ code {
 }
 .hero_page__description {
   opacity: 0;
-  /* position: absolute; */
   text-align: left;
   width: 40vw;
   padding: 1em;
-  /* top: 1em; */
-  /* left: 1em; */
   animation: description .1s ease-in normal forwards;
 }
 @keyframes description {
